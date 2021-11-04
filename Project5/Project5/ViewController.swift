@@ -16,7 +16,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(startGame))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(restartGame))
         
         if let startURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let contentsOfStart = try? String(contentsOf: startURL) {
@@ -30,10 +30,35 @@ class ViewController: UITableViewController {
         
         startGame()
     }
-
+    
+    @objc func restartGame() {
+        
+        let defaults = UserDefaults.standard
+        
+        defaults.set(nil, forKey: "title")
+        defaults.set(nil, forKey: "used words")
+        title = allWords.randomElement()
+                
+        usedWords.removeAll(keepingCapacity: true)
+        
+        tableView.reloadData()
+    }
+    
     @objc func startGame() {
         title = allWords.randomElement()
+                
         usedWords.removeAll(keepingCapacity: true)
+        
+        let defaults = UserDefaults.standard
+        if let title = defaults.string(forKey: "title") {
+            self.title = title
+            if let usedWords = defaults.object(forKey: "used words") as? [String] {
+                self.usedWords = usedWords
+            }
+        } else {
+            defaults.set(title, forKey: "title")
+        }
+        
         tableView.reloadData()
     }
     
@@ -71,6 +96,9 @@ class ViewController: UITableViewController {
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
+                    
+                    let defaults = UserDefaults.standard
+                    defaults.set(usedWords, forKey: "used words")
                 } else {
                     guard let title = title?.lowercased() else { return }
                     alert(title:"Word not possible",

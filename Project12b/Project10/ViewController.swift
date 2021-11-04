@@ -21,6 +21,14 @@ class ViewController: UICollectionViewController,
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
         
+        let defaults = UserDefaults.standard
+        let jsonDecoder = JSONDecoder()
+        
+        if let savedData = defaults.object(forKey: "people") as? Data {
+            if let people = try? jsonDecoder.decode([Person].self, from: savedData) {
+                self.people = people
+            }
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -61,6 +69,7 @@ class ViewController: UICollectionViewController,
             guard let name = ac?.textFields?[0].text else { return }
             person.name = name
             
+            self?.save()
             self?.collectionView.reloadData()
         })
         
@@ -105,5 +114,15 @@ class ViewController: UICollectionViewController,
     /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 140, height: 180)
     }*/
+    
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        
+        if let dataToSave = try? jsonEncoder.encode(people) {
+            let defaults = UserDefaults.standard
+            
+            defaults.set(dataToSave, forKey: "people")
+        }
+    }
 
 }

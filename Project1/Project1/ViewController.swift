@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var pictures = [String]()
+    var numbers = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,18 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
                 if item.hasPrefix("nssl") {
                     // this is a picture to load!
                     self?.pictures.append(item)
+                    self?.numbers.append(0)
                 }
             }
             
             print(self?.pictures ?? "")
+            
+            let defaults = UserDefaults.standard
+            if let numbersData = defaults.object(forKey: "numbers") as? Data {
+                if let numbers = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(numbersData) as? [Int] {
+                    self?.numbers = numbers
+                }
+            }
             
             self?.collectionView.performSelector(onMainThread: #selector(UICollectionView.reloadData), with: nil, waitUntilDone: false)
         }
@@ -46,17 +55,29 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Landscape", for: indexPath) as? LandscapeCell else { fatalError("Could not get instance of LandscapeCell") }
         
-        cell.imageView.image = UIImage(named: pictures[indexPath.row])
+        cell.imageView.image = UIImage(named: pictures[indexPath.item])
         cell.label.text = pictures[indexPath.row]
         
         cell.imageView.layer.borderColor = UIColor(white: 0, alpha: 0.3).cgColor
         cell.imageView.layer.borderWidth = 2
         cell.imageView.layer.cornerRadius = 3
         
+        cell.numbers.text = String(numbers[indexPath.item])
+        
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        numbers[indexPath.item] += 1
+        
+        if let numbersToSave = try? NSKeyedArchiver.archivedData(withRootObject: numbers, requiringSecureCoding: false) {
+            
+            let defaults = UserDefaults.standard
+            defaults.set(numbersToSave, forKey: "numbers")
+        }
+        
+        collectionView.reloadData()
+        
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             vc.imageTitle = "Picture \(indexPath.row+1) of \(pictures.count)"
             vc.selectedImage = pictures[indexPath.row]

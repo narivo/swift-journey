@@ -10,4 +10,5 @@ import UIKit
 class LandscapeCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var label: UILabel!
+    @IBOutlet var numbers: UILabel!
 }

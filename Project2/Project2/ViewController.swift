@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var correctAnswer = 0
     var titleWithScore = ""
     var questionNum = 0
+    var highScore = 0
+    var presentedHighScore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,14 @@ class ViewController: UIViewController {
         askQuestion()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showScore))
+        
+        let defaults = UserDefaults.standard
+        
+        if let savedHighScore = defaults.object(forKey: "high score") as? Data {
+            if let highScore = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedHighScore) as? Int {
+                self.highScore = highScore
+            }
+        }
     }
 
     @objc func showScore() {
@@ -65,6 +75,20 @@ class ViewController: UIViewController {
         if sender.tag == correctAnswer {
             title = "Correct"
             score += 1
+            if score > highScore {
+                highScore = score
+                
+                if let scoreToSave = try? NSKeyedArchiver.archivedData(withRootObject: highScore, requiringSecureCoding: false) {
+                    
+                    let defaults = UserDefaults.standard
+                    defaults.set(scoreToSave, forKey: "high score")
+                }
+                
+                if presentedHighScore == false {
+                    presentAlert(say: "Your new high score is \(score)", title: title) { action in }
+                    presentedHighScore = true
+                }
+            }
             askQuestion()
         } else {
             title = "Wrong"
