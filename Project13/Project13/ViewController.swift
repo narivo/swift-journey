@@ -27,6 +27,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
         context = CIContext()
         currentFilter = CIFilter(name: "CISepiaTone")
+        
+        imageView.alpha = 0
     }
 
     @objc func importPicture() {
@@ -43,6 +45,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        
+        imageView.image = currentImage
+        UIView.animate(withDuration: 1, delay: 0, options: []) {
+            self.imageView.alpha = 1
+        }
+        
         applyProcessing()
         
     }

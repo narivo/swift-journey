@@ -62,6 +62,13 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
+        UIView.animate(withDuration: 0.5, delay: 0, options: []) {
+            self.button1.transform = CGAffineTransform.identity
+            self.button2.transform = CGAffineTransform.identity
+            self.button3.transform = CGAffineTransform.identity
+            
+        }
+        
         //title = countries[correctAnswer].uppercased()
         titleWithScore = "\(countries[correctAnswer].uppercased()) | score: \(score)"
         title = titleWithScore
@@ -71,6 +78,11 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         var title: String
+
+        //UIView.animate(withDuration: 1, delay: 0, options: []) {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: []) {
+            sender.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        }
 
         if sender.tag == correctAnswer {
             title = "Correct"
