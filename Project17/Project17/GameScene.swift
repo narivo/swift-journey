@@ -22,6 +22,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var enemies = ["ball", "hammer", "tv"]
     var timer: Timer?
     var isGameOver = false
+
+    var enemiesCreated = 0
+    var lastLocation = CGPoint(x: 100, y: 384)
+    var isMovingPlayer = false
+    
+    var timeInterval = 1.0
     
     override func didMove(to view: SKView) {
         backgroundColor = .black
@@ -31,9 +37,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         starfield.advanceSimulationTime(10)
         addChild(starfield)
         starfield.zPosition = -1
-        
+    
         player = SKSpriteNode(imageNamed: "player")
-        player.position = CGPoint(x: 100, y: 384)
+        player.position = lastLocation
         player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.size)
         player.physicsBody?.contactTestBitMask = 1
         addChild(player)
@@ -48,7 +54,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self
         
-        timer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
     }
     
     @objc func createEnemy() {
@@ -60,9 +66,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.contactTestBitMask = 1
         sprite.physicsBody?.velocity = CGVector(dx: -500, dy: 0)
         sprite.physicsBody?.angularVelocity = 5
-        //sprite.physicsBody?.linearDamping = 0
-        //sprite.physicsBody?.angularDamping = 0
+        sprite.physicsBody?.linearDamping = 0
+        sprite.physicsBody?.angularDamping = 0
         addChild(sprite)
+        
+        enemiesCreated += 1
+        
+        if enemiesCreated % 20 == 0 {
+            timeInterval -= 0.1
+            
+            if timeInterval < 0.3 {
+                timeInterval = 0.3
+            }
+            
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -75,20 +95,42 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if !isGameOver {
             score += 1
         }
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //if isMovingPlayer == false {
+            
         guard let touch = touches.first else { return }
         var location = touch.location(in: self)
         
-        if location.y < 100 {
-            location.y = 100
-        } else if location.y > 668 {
-            location.y = 668
-        }
+        location.y = location.y.clamp(100, 668)
         
         player.position = location
+            
+        //}
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // best solution tested
+        player.position = lastLocation
+    }
+    
+    /*override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if isMovingPlayer == false {
+         
+            guard let touch = touches.first else { return }
+            let location = touch.location(in: self)
+            
+            let move = SKAction.moveBy(x: location.x - lastLocation.x, y: location.y - lastLocation.y, duration: 0.5)
+            
+            isMovingPlayer = true
+            player.run(move)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                self?.isMovingPlayer = false
+            }
+        }
+    }*/
     
     func didBegin(_ contact: SKPhysicsContact) {
         if !isGameOver {
@@ -97,9 +139,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(explosion)
             
             player.removeFromParent()
+            timer?.invalidate()
             
             isGameOver = true
         }
     }
     
+}
+
+extension CGFloat {
+    func clamp(_ begin: CGFloat, _ end: CGFloat) -> CGFloat {
+        if self < begin {
+            return begin
+        } else if self > end {
+            return end
+        }
+        
+        return self
+    }
 }

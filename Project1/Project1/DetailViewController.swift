@@ -20,6 +20,8 @@ class DetailViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         //navigationController?.navigationBar.prefersLargeTitles = false
         
+        assert(selectedImage != nil)
+        
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
         }
