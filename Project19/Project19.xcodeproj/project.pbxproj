@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4955EB6227633D5C00035550 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955EB6127633D5C00035550 /* ShareViewController.swift */; };
+		4955EB6527633D5C00035550 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4955EB6327633D5C00035550 /* MainInterface.storyboard */; };
+		4955EB6927633D5D00035550 /* Extension3.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4955EB5F27633D5C00035550 /* Extension3.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4955EB742763418E00035550 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955EB732763418E00035550 /* SafariWebExtensionHandler.swift */; };
+		4955EB772763418E00035550 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 4955EB762763418E00035550 /* _locales */; };
+		4955EB792763418E00035550 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 4955EB782763418E00035550 /* images */; };
+		4955EB7B2763418E00035550 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4955EB7A2763418E00035550 /* manifest.json */; };
+		4955EB7D2763418E00035550 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 4955EB7C2763418E00035550 /* background.js */; };
+		4955EB7F2763418E00035550 /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 4955EB7E2763418E00035550 /* content.js */; };
+		4955EB812763418E00035550 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 4955EB802763418E00035550 /* popup.html */; };
+		4955EB832763418E00035550 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 4955EB822763418E00035550 /* popup.css */; };
+		4955EB852763418E00035550 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 4955EB842763418E00035550 /* popup.js */; };
+		4955EB892763418E00035550 /* Extension4.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4955EB712763418E00035550 /* Extension4.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4990DA0F276333F100AC8306 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BF1F8F27622682005811C5 /* UniformTypeIdentifiers.framework */; };
+		4990DA12276333F100AC8306 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4990DA11276333F100AC8306 /* Media.xcassets */; };
+		4990DA14276333F100AC8306 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990DA13276333F100AC8306 /* ActionViewController.swift */; };
+		4990DA17276333F100AC8306 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4990DA15276333F100AC8306 /* MainInterface.storyboard */; };
+		4990DA1B276333F100AC8306 /* Extension2.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4990DA0E276333F100AC8306 /* Extension2.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		49BF1F76276224A6005811C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF1F75276224A6005811C5 /* AppDelegate.swift */; };
 		49BF1F78276224A6005811C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF1F77276224A6005811C5 /* SceneDelegate.swift */; };
 		49BF1F7A276224A6005811C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF1F79276224A6005811C5 /* ViewController.swift */; };
@@ -22,6 +40,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4955EB6727633D5D00035550 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49BF1F6A276224A5005811C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4955EB5E27633D5C00035550;
+			remoteInfo = Extension3;
+		};
+		4955EB872763418E00035550 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49BF1F6A276224A5005811C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4955EB702763418E00035550;
+			remoteInfo = Extension4;
+		};
+		4990DA19276333F100AC8306 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49BF1F6A276224A5005811C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4990DA0D276333F100AC8306;
+			remoteInfo = Extension2;
+		};
 		49BF1F9A27622682005811C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49BF1F6A276224A5005811C5 /* Project object */;
@@ -39,6 +78,9 @@
 			dstSubfolderSpec = 13;
 			files = (
 				49BF1F9C27622682005811C5 /* Extension.appex in Embed App Extensions */,
+				4955EB892763418E00035550 /* Extension4.appex in Embed App Extensions */,
+				4955EB6927633D5D00035550 /* Extension3.appex in Embed App Extensions */,
+				4990DA1B276333F100AC8306 /* Extension2.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +88,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4955EB5F27633D5C00035550 /* Extension3.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Extension3.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4955EB6127633D5C00035550 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		4955EB6427633D5C00035550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4955EB6627633D5D00035550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4955EB712763418E00035550 /* Extension4.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Extension4.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4955EB732763418E00035550 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		4955EB762763418E00035550 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
+		4955EB782763418E00035550 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		4955EB7A2763418E00035550 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		4955EB7C2763418E00035550 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
+		4955EB7E2763418E00035550 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
+		4955EB802763418E00035550 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		4955EB822763418E00035550 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
+		4955EB842763418E00035550 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		4955EB862763418E00035550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4990DA0E276333F100AC8306 /* Extension2.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Extension2.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4990DA11276333F100AC8306 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		4990DA13276333F100AC8306 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		4990DA16276333F100AC8306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4990DA18276333F100AC8306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49BF1F72276224A6005811C5 /* Project19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BF1F75276224A6005811C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49BF1F77276224A6005811C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +126,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4955EB5C27633D5C00035550 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4955EB6E2763418E00035550 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4990DA0B276333F100AC8306 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4990DA0F276333F100AC8306 /* UniformTypeIdentifiers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49BF1F6F276224A5005811C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,11 +166,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4955EB6027633D5C00035550 /* Extension3 */ = {
+			isa = PBXGroup;
+			children = (
+				4955EB6127633D5C00035550 /* ShareViewController.swift */,
+				4955EB6327633D5C00035550 /* MainInterface.storyboard */,
+				4955EB6627633D5D00035550 /* Info.plist */,
+			);
+			path = Extension3;
+			sourceTree = "<group>";
+		};
+		4955EB722763418E00035550 /* Extension4 */ = {
+			isa = PBXGroup;
+			children = (
+				4955EB732763418E00035550 /* SafariWebExtensionHandler.swift */,
+				4955EB862763418E00035550 /* Info.plist */,
+				4955EB752763418E00035550 /* Resources */,
+			);
+			path = Extension4;
+			sourceTree = "<group>";
+		};
+		4955EB752763418E00035550 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4955EB762763418E00035550 /* _locales */,
+				4955EB782763418E00035550 /* images */,
+				4955EB7A2763418E00035550 /* manifest.json */,
+				4955EB7C2763418E00035550 /* background.js */,
+				4955EB7E2763418E00035550 /* content.js */,
+				4955EB802763418E00035550 /* popup.html */,
+				4955EB822763418E00035550 /* popup.css */,
+				4955EB842763418E00035550 /* popup.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4990DA10276333F100AC8306 /* Extension2 */ = {
+			isa = PBXGroup;
+			children = (
+				4990DA11276333F100AC8306 /* Media.xcassets */,
+				4990DA13276333F100AC8306 /* ActionViewController.swift */,
+				4990DA15276333F100AC8306 /* MainInterface.storyboard */,
+				4990DA18276333F100AC8306 /* Info.plist */,
+			);
+			path = Extension2;
+			sourceTree = "<group>";
+		};
 		49BF1F69276224A5005811C5 = {
 			isa = PBXGroup;
 			children = (
 				49BF1F74276224A6005811C5 /* Project19 */,
 				49BF1F9127622682005811C5 /* Extension */,
+				4990DA10276333F100AC8306 /* Extension2 */,
+				4955EB6027633D5C00035550 /* Extension3 */,
+				4955EB722763418E00035550 /* Extension4 */,
 				49BF1F8E27622682005811C5 /* Frameworks */,
 				49BF1F73276224A6005811C5 /* Products */,
 			);
@@ -97,6 +230,9 @@
 			children = (
 				49BF1F72276224A6005811C5 /* Project19.app */,
 				49BF1F8D27622681005811C5 /* Extension.appex */,
+				4990DA0E276333F100AC8306 /* Extension2.appex */,
+				4955EB5F27633D5C00035550 /* Extension3.appex */,
+				4955EB712763418E00035550 /* Extension4.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +274,57 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4955EB5E27633D5C00035550 /* Extension3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4955EB6C27633D5D00035550 /* Build configuration list for PBXNativeTarget "Extension3" */;
+			buildPhases = (
+				4955EB5B27633D5C00035550 /* Sources */,
+				4955EB5C27633D5C00035550 /* Frameworks */,
+				4955EB5D27633D5C00035550 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extension3;
+			productName = Extension3;
+			productReference = 4955EB5F27633D5C00035550 /* Extension3.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		4955EB702763418E00035550 /* Extension4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4955EB8A2763418E00035550 /* Build configuration list for PBXNativeTarget "Extension4" */;
+			buildPhases = (
+				4955EB6D2763418E00035550 /* Sources */,
+				4955EB6E2763418E00035550 /* Frameworks */,
+				4955EB6F2763418E00035550 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extension4;
+			productName = Extension4;
+			productReference = 4955EB712763418E00035550 /* Extension4.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		4990DA0D276333F100AC8306 /* Extension2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4990DA1E276333F100AC8306 /* Build configuration list for PBXNativeTarget "Extension2" */;
+			buildPhases = (
+				4990DA0A276333F100AC8306 /* Sources */,
+				4990DA0B276333F100AC8306 /* Frameworks */,
+				4990DA0C276333F100AC8306 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extension2;
+			productName = Extension2;
+			productReference = 4990DA0E276333F100AC8306 /* Extension2.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		49BF1F71276224A5005811C5 /* Project19 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49BF1F86276224C7005811C5 /* Build configuration list for PBXNativeTarget "Project19" */;
@@ -151,6 +338,9 @@
 			);
 			dependencies = (
 				49BF1F9B27622682005811C5 /* PBXTargetDependency */,
+				4990DA1A276333F100AC8306 /* PBXTargetDependency */,
+				4955EB6827633D5D00035550 /* PBXTargetDependency */,
+				4955EB882763418E00035550 /* PBXTargetDependency */,
 			);
 			name = Project19;
 			productName = Project19;
@@ -184,6 +374,15 @@
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					4955EB5E27633D5C00035550 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					4955EB702763418E00035550 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					4990DA0D276333F100AC8306 = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					49BF1F71276224A5005811C5 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -207,11 +406,46 @@
 			targets = (
 				49BF1F71276224A5005811C5 /* Project19 */,
 				49BF1F8C27622681005811C5 /* Extension */,
+				4990DA0D276333F100AC8306 /* Extension2 */,
+				4955EB5E27633D5C00035550 /* Extension3 */,
+				4955EB702763418E00035550 /* Extension4 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4955EB5D27633D5C00035550 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4955EB6527633D5C00035550 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4955EB6F2763418E00035550 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4955EB7D2763418E00035550 /* background.js in Resources */,
+				4955EB832763418E00035550 /* popup.css in Resources */,
+				4955EB812763418E00035550 /* popup.html in Resources */,
+				4955EB792763418E00035550 /* images in Resources */,
+				4955EB7B2763418E00035550 /* manifest.json in Resources */,
+				4955EB772763418E00035550 /* _locales in Resources */,
+				4955EB7F2763418E00035550 /* content.js in Resources */,
+				4955EB852763418E00035550 /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4990DA0C276333F100AC8306 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4990DA12276333F100AC8306 /* Media.xcassets in Resources */,
+				4990DA17276333F100AC8306 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49BF1F70276224A5005811C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +469,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4955EB5B27633D5C00035550 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4955EB6227633D5C00035550 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4955EB6D2763418E00035550 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4955EB742763418E00035550 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4990DA0A276333F100AC8306 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4990DA14276333F100AC8306 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49BF1F6E276224A5005811C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +514,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4955EB6827633D5D00035550 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4955EB5E27633D5C00035550 /* Extension3 */;
+			targetProxy = 4955EB6727633D5D00035550 /* PBXContainerItemProxy */;
+		};
+		4955EB882763418E00035550 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4955EB702763418E00035550 /* Extension4 */;
+			targetProxy = 4955EB872763418E00035550 /* PBXContainerItemProxy */;
+		};
+		4990DA1A276333F100AC8306 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4990DA0D276333F100AC8306 /* Extension2 */;
+			targetProxy = 4990DA19276333F100AC8306 /* PBXContainerItemProxy */;
+		};
 		49BF1F9B27622682005811C5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 49BF1F8C27622681005811C5 /* Extension */;
@@ -264,6 +537,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4955EB6327633D5C00035550 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4955EB6427633D5C00035550 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		4990DA15276333F100AC8306 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4990DA16276333F100AC8306 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		49BF1F7B276224A6005811C5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,6 +580,166 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4955EB6A27633D5D00035550 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5LP3MC28Z5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Extension3/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Extension3;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.madiapps.Project19.Extension3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4955EB6B27633D5D00035550 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5LP3MC28Z5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Extension3/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Extension3;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.madiapps.Project19.Extension3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4955EB8B2763418E00035550 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5LP3MC28Z5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Extension4/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Extension4;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.madiapps.Project19.Extension4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4955EB8C2763418E00035550 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5LP3MC28Z5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Extension4/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Extension4;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.madiapps.Project19.Extension4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4990DA1C276333F100AC8306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5LP3MC28Z5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Extension2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Extension2;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.madiapps.Project19.Extension2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4990DA1D276333F100AC8306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5LP3MC28Z5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Extension2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Extension2;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.madiapps.Project19.Extension2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		49BF1F84276224C7005811C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -520,6 +969,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4955EB6C27633D5D00035550 /* Build configuration list for PBXNativeTarget "Extension3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4955EB6A27633D5D00035550 /* Debug */,
+				4955EB6B27633D5D00035550 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4955EB8A2763418E00035550 /* Build configuration list for PBXNativeTarget "Extension4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4955EB8B2763418E00035550 /* Debug */,
+				4955EB8C2763418E00035550 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4990DA1E276333F100AC8306 /* Build configuration list for PBXNativeTarget "Extension2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4990DA1C276333F100AC8306 /* Debug */,
+				4990DA1D276333F100AC8306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		49BF1F6D276224A5005811C5 /* Build configuration list for PBXProject "Project19" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
