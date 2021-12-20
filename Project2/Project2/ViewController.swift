@@ -5,6 +5,7 @@
 //  Created by MadiApps on 27/08/2021.
 //
 
+import UserNotifications
 import UIKit
 
 class ViewController: UIViewController {
@@ -23,6 +24,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerLocal()
+        scheduleLocal()
         
         countries += ["estonia", "france", "germany",
                       "ireland", "italy", "monaco",
@@ -50,6 +54,43 @@ class ViewController: UIViewController {
         }
     }
 
+    func registerLocal() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                print("Yay!")
+            } else {
+                print("D'oh!")
+            }
+        }
+    }
+    
+    func scheduleLocal() {
+        
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Come guess this flag!"
+        content.categoryIdentifier = "alarm"
+        content.sound = .default
+        
+        var dateComponents = DateComponents()
+        let date = Date()
+        let calendar = Calendar.current
+        
+        dateComponents.hour = calendar.component(.hour, from: date)
+        dateComponents.minute = calendar.component(.minute, from: date) - 1
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        center.add(request)
+    }
+    
     @objc func showScore() {
         presentAlert(say: "\(score).", title: "Your score:") { action in }
     }
