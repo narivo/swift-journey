@@ -23,15 +23,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0N-7C-LDn">
+                                <rect key="frame" x="166" y="389" width="82" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqk-6c-7wt">
+                                <rect key="frame" x="79" y="325" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="PsZ-Kd-OwX"/>
+                                    <constraint firstAttribute="width" constant="256" id="Wen-Zi-eIl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bqk-6c-7wt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="17P-22-kk7"/>
+                            <constraint firstItem="bqk-6c-7wt" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="2IA-ze-PAM"/>
                             <constraint firstItem="rvW-xX-GrO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="MrT-HE-fAb"/>
                             <constraint firstItem="rvW-xX-GrO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UNK-6N-E9u"/>
+                            <constraint firstItem="L0N-7C-LDn" firstAttribute="centerX" secondItem="rvW-xX-GrO" secondAttribute="centerX" id="neY-aK-3cz"/>
+                            <constraint firstItem="L0N-7C-LDn" firstAttribute="bottom" secondItem="rvW-xX-GrO" secondAttribute="top" constant="-10" id="wup-L1-DUI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="beaconReading" destination="L0N-7C-LDn" id="xeZ-1f-8T8"/>
+                        <outlet property="circleView" destination="bqk-6c-7wt" id="rUD-Sz-bYN"/>
                         <outlet property="distanceReading" destination="rvW-xX-GrO" id="w0O-zA-Cb8"/>
                     </connections>
                 </viewController>
