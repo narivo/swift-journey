@@ -125,33 +125,39 @@ class GameScene: SKScene {
         let nodesAtPoint = nodes(at: location)
         
         for case let node as SKSpriteNode in nodesAtPoint {
-            if node.name == "enemy" {
-                if let emitter = SKEmitterNode(fileNamed: "sliceHitEnemy") {
-                    emitter.position = node.position
-                    addChild(emitter)
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak emitter] in
-                        emitter?.run(SKAction.run { emitter?.removeFromParent() })
+            if let contains = node.name?.contains("enemy") {
+                if contains == true {
+                    if let emitter = SKEmitterNode(fileNamed: "sliceHitEnemy") {
+                        emitter.position = node.position
+                        addChild(emitter)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak emitter] in
+                            emitter?.run(SKAction.run { emitter?.removeFromParent() })
+                        }
                     }
+                    
+                    if node.name == "enemy" {
+                        score += 1
+                    } else if node.name == "enemySpecial" {
+                        score += 2
+                    }
+                    
+                    node.name = ""
+                    node.physicsBody?.isDynamic = false
+                    
+                    let scaleOut = SKAction.scale(to: 0.001, duration: 0.2)
+                    let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+                    let group = SKAction.group([scaleOut, fadeOut])
+                    let seq = SKAction.sequence([group, .removeFromParent()])
+                    
+                    node.run(seq)
+                    
+                    if let index = activeEnemies.firstIndex(of: node) {
+                        activeEnemies.remove(at: index)
+                    }
+                    
+                    run(SKAction.playSoundFileNamed("whack", waitForCompletion: false))
                 }
-                
-                node.name = ""
-                node.physicsBody?.isDynamic = false
-                
-                let scaleOut = SKAction.scale(to: 0.001, duration: 0.2)
-                let fadeOut = SKAction.fadeOut(withDuration: 0.2)
-                let group = SKAction.group([scaleOut, fadeOut])
-                let seq = SKAction.sequence([group, .removeFromParent()])
-                
-                node.run(seq)
-                
-                score += 1
-                
-                if let index = activeEnemies.firstIndex(of: node) {
-                    activeEnemies.remove(at: index)
-                }
-                
-                run(SKAction.playSoundFileNamed("whack", waitForCompletion: false))
             } else if node.name == "bomb" {
                 guard let bombContainer = node.parent as? SKSpriteNode else { continue }
                 if let emitter = SKEmitterNode(fileNamed: "sliceHitBomb") {
@@ -330,7 +336,7 @@ class GameScene: SKScene {
         enemy.position = randomPosition
         
         let randomAngularVelocity = CGFloat.random(in: -3...3)
-        let randomXVelocity: Int
+        var randomXVelocity: Int
         
         if randomPosition.x < 333 {
             randomXVelocity = Int.random(in: 8...15)
@@ -343,6 +349,11 @@ class GameScene: SKScene {
         }
         
         let randomYVelocity = Int.random(in: 24...32)
+        
+        if enemyType == 3 {
+            randomXVelocity *= 3
+            enemy.name = "enemySpecial"
+        }
         
         enemy.physicsBody = SKPhysicsBody(circleOfRadius: 64)
         enemy.physicsBody?.velocity = CGVector(dx: randomXVelocity * 40, dy: randomYVelocity * 40)
@@ -383,13 +394,16 @@ class GameScene: SKScene {
                 if node.position.y < -140 {
                     node.removeAllActions()
                     
-                    if node.name == "enemy" {
-                        node.name = ""
-                        substractLife()
-                        
-                        node.removeFromParent()
-                        activeEnemies.remove(at: idx)
-                    } else if node.name == "bombContainer" {
+                    if let contains = node.name?.contains("enemy") {
+                        if contains == true {
+                            node.name = ""
+                            substractLife()
+                            
+                            node.removeFromParent()
+                            activeEnemies.remove(at: idx)
+                        }
+                    }
+                    if node.name == "bombContainer" {
                         node.name = ""
                         node.removeFromParent()
                         activeEnemies.remove(at: idx)
