@@ -93,4 +93,27 @@ attributedString2.addAttribute(.font, value: UIFont.systemFont(ofSize: 24), rang
 attributedString2.addAttribute(.font, value: UIFont.systemFont(ofSize: 32), range: NSRange(location: 10, length: 4))
 attributedString2.addAttribute(.font, value: UIFont.systemFont(ofSize: 40), range: NSRange(location: 15, length: 6))
 
+
+// =========== //
+// 4.Challenge //
+// =========== //
+extension String {
+  var isNumeric: Bool {
+    return Double(self) != nil
+  }
+
+  func withPrefix(_ prefix: String) -> String {
+    return prefix + self
+  }
+
+  var lines: [String] {
+    return self.components(separatedBy: "\n")
+  }
+}
+
+print("4i00".isNumeric)
+
+print("pet".withPrefix("car"))
+
+print("this\nis\na\ntest".lines)
 // playground stuck here
