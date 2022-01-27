@@ -18,7 +18,7 @@ class SelfieMultipeerSession: NSObject, ObservableObject {
     private let log = Logger()
     
     var connectedPeers: [MCPeerID] = []
-    var dataReceiver: MultiPeerDataReceiver?
+    var selfieDelegate: SelfieMultiPeerDelegate?
     
     override init() {
         session = MCSession(peer: myPeerId, securityIdentity: nil, encryptionPreference: .none)
@@ -80,12 +80,15 @@ extension SelfieMultipeerSession: MCSessionDelegate {
         log.info("peer \(peerID) didChangeState: \(state.rawValue)")
         DispatchQueue.main.async { [weak self] in
             self?.connectedPeers = session.connectedPeers
+            if state == .notConnected {
+                self?.selfieDelegate?.selfie(lostPeer: peerID)
+            }
         }
     }
 
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         log.info("didReceive bytes \(data.count) bytes")
-        dataReceiver?.session(session, didReceive: data, fromPeer: peerID)
+        selfieDelegate?.selfie(session, didReceive: data, fromPeer: peerID)
     }
 
     public func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -101,6 +104,7 @@ extension SelfieMultipeerSession: MCSessionDelegate {
     }
 }
 
-protocol MultiPeerDataReceiver {
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID)
+protocol SelfieMultiPeerDelegate {
+    func selfie(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID)
+    func selfie(lostPeer peerID: MCPeerID)
 }
