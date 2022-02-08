@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49312C4B27A7BAD7001D8E3B /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49312C4A27A7BAD7001D8E3B /* level1.txt */; };
+		4956B09827B24774004A02F1 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4956B09727B24416004A02F1 /* level2.txt */; };
 		499D6A9527A7B9E60094E541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6A9427A7B9E60094E541 /* AppDelegate.swift */; };
 		499D6A9727A7B9E60094E541 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 499D6A9627A7B9E60094E541 /* GameScene.sks */; };
 		499D6A9B27A7B9E60094E541 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6A9A27A7B9E60094E541 /* GameScene.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		49312C4A27A7BAD7001D8E3B /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
+		4956B09727B24416004A02F1 /* level2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
 		499D6A9127A7B9E60094E541 /* Project26.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project26.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499D6A9427A7B9E60094E541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499D6A9627A7B9E60094E541 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				499D6AA127A7B9E90094E541 /* Assets.xcassets */,
 				499D6AA327A7B9E90094E541 /* LaunchScreen.storyboard */,
 				49312C4A27A7BAD7001D8E3B /* level1.txt */,
+				4956B09727B24416004A02F1 /* level2.txt */,
 			);
 			path = Project26;
 			sourceTree = "<group>";
@@ -131,6 +134,7 @@
 			files = (
 				49312C4B27A7BAD7001D8E3B /* level1.txt in Resources */,
 				499D6AA027A7B9E60094E541 /* Main.storyboard in Resources */,
+				4956B09827B24774004A02F1 /* level2.txt in Resources */,
 				499D6A9727A7B9E60094E541 /* GameScene.sks in Resources */,
 				499D6AA227A7B9E90094E541 /* Assets.xcassets in Resources */,
 				499D6AA527A7B9E90094E541 /* LaunchScreen.storyboard in Resources */,
