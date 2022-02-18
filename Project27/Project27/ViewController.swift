@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        drawRectangle()
+        drawTwinText()
     }
 
     @IBAction func redrawTapped(_ sender: Any) {
@@ -162,6 +162,50 @@ class ViewController: UIViewController {
             
             let mouse = UIImage(named: "mouse")
             mouse?.draw(at: CGPoint(x: 300, y: 150))
+        }
+        
+        imageView.image = image
+    }
+    
+    func drawTwinText() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let image = renderer.image { ctx in
+            // T
+            ctx.cgContext.translateBy(x: 186, y: 206)
+            ctx.cgContext.move(to: CGPoint(x: 0, y: 0))
+            ctx.cgContext.addLine(to: CGPoint(x: 50, y: 0))
+            ctx.cgContext.translateBy(x: 25, y: 0)
+            ctx.cgContext.move(to: CGPoint(x: 0, y: 0))
+            ctx.cgContext.addLine(to: CGPoint(x: 0, y: 50))
+            
+            // W
+            ctx.cgContext.translateBy(x: 30, y: 0)
+            ctx.cgContext.move(to: CGPoint(x: 0, y: 0))
+            ctx.cgContext.addLine(to: CGPoint(x: 12, y: 50))
+            ctx.cgContext.move(to: CGPoint(x: 12, y: 50))
+            ctx.cgContext.addLine(to: CGPoint(x: 22, y: 40))
+            ctx.cgContext.move(to: CGPoint(x: 22, y: 40))
+            ctx.cgContext.addLine(to: CGPoint(x: 32, y: 50))
+            ctx.cgContext.move(to: CGPoint(x: 32, y: 50))
+            ctx.cgContext.addLine(to: CGPoint(x: 42, y: 0))
+            
+            // I
+            ctx.cgContext.translateBy(x: 47, y: 0)
+            ctx.cgContext.move(to: CGPoint(x: 0, y: 0))
+            ctx.cgContext.addLine(to: CGPoint(x: 0, y: 50))
+            
+            // N
+            ctx.cgContext.translateBy(x: 6, y: 0)
+            ctx.cgContext.move(to: CGPoint(x: 0, y: 0))
+            ctx.cgContext.addLine(to: CGPoint(x: 0, y: 50))
+            ctx.cgContext.move(to: CGPoint(x: 0, y: 0))
+            ctx.cgContext.addLine(to: CGPoint(x: 30, y: 50))
+            ctx.cgContext.move(to: CGPoint(x: 30, y: 50))
+            ctx.cgContext.addLine(to: CGPoint(x: 30, y: 0))
+            
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.strokePath()
         }
         
         imageView.image = image

@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495090F027BCF5680069C9D4 /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495090EF27BCF5680069C9D4 /* GestureViewController.swift */; };
+		495090F427BD38EB0069C9D4 /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495090F227BD38EB0069C9D4 /* AlamofireImage.xcframework */; };
+		495090F527BD38EB0069C9D4 /* AlamofireImage.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 495090F227BD38EB0069C9D4 /* AlamofireImage.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		495090F627BD38EB0069C9D4 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495090F327BD38EB0069C9D4 /* Alamofire.xcframework */; };
+		495090F727BD38EB0069C9D4 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 495090F327BD38EB0069C9D4 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49601A5C26B133870092A731 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49601A5B26B133870092A731 /* AppDelegate.swift */; };
 		49601A5E26B133870092A731 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49601A5D26B133870092A731 /* SceneDelegate.swift */; };
 		49601A6026B133880092A731 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49601A5F26B133880092A731 /* ViewController.swift */; };
@@ -23,7 +28,25 @@
 		49FE131526B2E6200083E083 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FE131426B2E6200083E083 /* GamesViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		495090F827BD38EB0069C9D4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				495090F727BD38EB0069C9D4 /* Alamofire.xcframework in Embed Frameworks */,
+				495090F527BD38EB0069C9D4 /* AlamofireImage.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		495090EF27BCF5680069C9D4 /* GestureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
+		495090F227BD38EB0069C9D4 /* AlamofireImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireImage.xcframework; path = Carthage/Build/AlamofireImage.xcframework; sourceTree = "<group>"; };
+		495090F327BD38EB0069C9D4 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		49601A5826B133870092A731 /* Ratings2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratings2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49601A5B26B133870092A731 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49601A5D26B133870092A731 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,18 +70,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495090F627BD38EB0069C9D4 /* Alamofire.xcframework in Frameworks */,
+				495090F427BD38EB0069C9D4 /* AlamofireImage.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		495090F127BD38EB0069C9D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				495090F327BD38EB0069C9D4 /* Alamofire.xcframework */,
+				495090F227BD38EB0069C9D4 /* AlamofireImage.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		49601A4F26B133860092A731 = {
 			isa = PBXGroup;
 			children = (
-				49BED4CF26B3DF17005EA098 /* Player.storyboard */,
 				49601A5A26B133870092A731 /* Ratings2 */,
 				49601A5926B133870092A731 /* Products */,
+				495090F127BD38EB0069C9D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +115,7 @@
 				49601A5D26B133870092A731 /* SceneDelegate.swift */,
 				49601A5F26B133880092A731 /* ViewController.swift */,
 				49601A6126B133880092A731 /* Main.storyboard */,
+				49BED4CF26B3DF17005EA098 /* Player.storyboard */,
 				49601A6426B133B10092A731 /* Assets.xcassets */,
 				49601A6626B133B10092A731 /* LaunchScreen.storyboard */,
 				49601A6926B133B10092A731 /* Info.plist */,
@@ -94,6 +129,7 @@
 				49FE130B26B2D9040083E083 /* PlayersViewController.swift */,
 				49FE131226B2E2030083E083 /* PlayerCUViewController.swift */,
 				49FE131426B2E6200083E083 /* GamesViewController.swift */,
+				495090EF27BCF5680069C9D4 /* GestureViewController.swift */,
 			);
 			path = ViewContorollers;
 			sourceTree = "<group>";
@@ -133,6 +169,7 @@
 				49601A5426B133870092A731 /* Sources */,
 				49601A5526B133870092A731 /* Frameworks */,
 				49601A5626B133870092A731 /* Resources */,
+				495090F827BD38EB0069C9D4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FE131126B2DB950083E083 /* PlayerCell.swift in Sources */,
+				495090F027BCF5680069C9D4 /* GestureViewController.swift in Sources */,
 				49FE130426B2D8130083E083 /* Player.swift in Sources */,
 				49FE130C26B2D9040083E083 /* PlayersViewController.swift in Sources */,
 				49FE130A26B2D87B0083E083 /* PlayersDataSource.swift in Sources */,
@@ -359,6 +397,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5LP3MC28Z5;
 				INFOPLIST_FILE = Ratings2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -377,6 +416,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5LP3MC28Z5;
 				INFOPLIST_FILE = Ratings2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

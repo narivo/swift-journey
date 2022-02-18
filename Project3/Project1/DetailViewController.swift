@@ -38,23 +38,40 @@ class DetailViewController: UIViewController {
     }
     
     @objc func shareTapped() {
-        guard let image = imageView.image?.jpegData(compressionQuality: 0.8),
+        //?.jpegData(compressionQuality: 0.8)
+        guard let image = imageView.image,
               let imageName = selectedImage else {
             print("No image found")
             return
         }
-        let vc = UIActivityViewController(activityItems: [image, imageName], applicationActivities: [])
-        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-        present(vc, animated: true)
+        
+        let renderer = UIGraphicsImageRenderer(size: image.size)
+        
+        let modifiedImage = renderer.image { ctx in
+            image.draw(at: CGPoint(x: 0, y: 0))
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .center
+            
+            let attrs: [NSAttributedString.Key: Any] = [
+                .font: UIFont.preferredFont(forTextStyle: .headline),
+                .paragraphStyle: paragraphStyle
+            ]
+            
+            let text = "From Storm Viewer"
+            let attributedString = NSAttributedString(string: text, attributes: attrs)
+            
+            attributedString.draw(at: CGPoint(x: 10, y: 20))
+        }
+        
+        if let imageToShare = modifiedImage.jpegData(compressionQuality: 0.8) {
+            let vc = UIActivityViewController(activityItems: [imageToShare, imageName], applicationActivities: [])
+            vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+            present(vc, animated: true)
+        } else {
+            // error handling
+        }
+        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
