@@ -10,9 +10,15 @@ let renderer = UIGraphicsImageRenderer(bounds: rect)
 
 let rendered = renderer.image { ctx in
 	// "This doesn't seem right…" – Designer
-    UIColor.red.setFill()
-    let circle1 = CGRect(x: 0, y: 0, width: 500, height: 500)
-    ctx.cgContext.fillEllipse(in: circle1)
+    var radians: Double = 0.0
+    for i in 1...4 {
+        ctx.cgContext.rotate(by: CGFloat(radians))
+        UIColor.red.setFill()
+        let circle1 = CGRect(x: 0, y: 0, width: 500, height: 500)
+        ctx.cgContext.fillEllipse(in: circle1)
+        radians += Double.pi
+    }
+    
 }
 
 showOutput(rendered)
