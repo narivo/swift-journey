@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(saveSecretMessage), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        KeychainWrapper.standard.set("admin1234", forKey: "SecretPassword")
     }
 
     @IBAction func authenticateTapped(_ sender: Any) {
@@ -35,8 +37,23 @@ class ViewController: UIViewController {
                     if success {
                         self?.unlockSecretMessage()
                     } else {
-                        let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; please try again.", preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        let ac = UIAlertController(title: "Authentication failed", message: "You could not be verified; enter password.", preferredStyle: .alert)
+                        ac.addTextField()
+                        ac.addAction(UIAlertAction(title: "Verify", style: .default) { [weak ac] _ in
+                            let typedPassword = ac?.textFields?[0].text
+                            let currentPassword = KeychainWrapper.standard.string(forKey: "SecretPassword") ?? "admin1234"
+                            if typedPassword == currentPassword {
+                                // authenticated
+                                self?.unlockSecretMessage()
+                            } else {
+                                // failedlet
+                                let iac = UIAlertController(title: "Incorrect password", message: "That is not the password.", preferredStyle: .alert)
+                                iac.addAction(UIAlertAction(title: "Quit", style: .default) { _ in
+                                    exit(0)
+                                })
+                                self?.present(iac, animated: true)
+                            }
+                        })
                         self?.present(ac, animated: true)
                     }
                 }
@@ -71,6 +88,7 @@ class ViewController: UIViewController {
         title = "Secret stuff!"
         
         secret.text = KeychainWrapper.standard.string(forKey: "SecretMessage") ?? ""
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveSecretMessage))
     }
     
     @objc func saveSecretMessage() {
@@ -80,6 +98,7 @@ class ViewController: UIViewController {
         secret.resignFirstResponder()
         secret.isHidden = true
         title = "Nothing to see here."
+        navigationItem.rightBarButtonItem = nil
     }
 }
 
