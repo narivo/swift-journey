@@ -15,6 +15,8 @@
 		490508EC27C8FBEF000EF8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490508EB27C8FBEF000EF8F3 /* Assets.xcassets */; };
 		490508EF27C8FBEF000EF8F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490508ED27C8FBEF000EF8F3 /* LaunchScreen.storyboard */; };
 		490508F627C8FD3C000EF8F3 /* BuildingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490508F527C8FD3C000EF8F3 /* BuildingNode.swift */; };
+		490F11B527CCB33100BE78E5 /* hitPlayer.sks in Resources */ = {isa = PBXBuildFile; fileRef = 490F11B327CCB33000BE78E5 /* hitPlayer.sks */; };
+		490F11B627CCB33100BE78E5 /* hitBuilding.sks in Resources */ = {isa = PBXBuildFile; fileRef = 490F11B427CCB33100BE78E5 /* hitBuilding.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		490508EB27C8FBEF000EF8F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		490508EE27C8FBEF000EF8F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		490508F527C8FD3C000EF8F3 /* BuildingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingNode.swift; sourceTree = "<group>"; };
+		490F11B327CCB33000BE78E5 /* hitPlayer.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = hitPlayer.sks; sourceTree = "<group>"; };
+		490F11B427CCB33100BE78E5 /* hitBuilding.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = hitBuilding.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				490508EB27C8FBEF000EF8F3 /* Assets.xcassets */,
 				490508ED27C8FBEF000EF8F3 /* LaunchScreen.storyboard */,
 				490508F527C8FD3C000EF8F3 /* BuildingNode.swift */,
+				490F11B427CCB33100BE78E5 /* hitBuilding.sks */,
+				490F11B327CCB33000BE78E5 /* hitPlayer.sks */,
 			);
 			path = "Project 29";
 			sourceTree = "<group>";
@@ -131,8 +137,10 @@
 			files = (
 				490508EA27C8FBEE000EF8F3 /* Main.storyboard in Resources */,
 				490508E127C8FBEE000EF8F3 /* GameScene.sks in Resources */,
+				490F11B527CCB33100BE78E5 /* hitPlayer.sks in Resources */,
 				490508EC27C8FBEF000EF8F3 /* Assets.xcassets in Resources */,
 				490508EF27C8FBEF000EF8F3 /* LaunchScreen.storyboard in Resources */,
+				490F11B627CCB33100BE78E5 /* hitBuilding.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
