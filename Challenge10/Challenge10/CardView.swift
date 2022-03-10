@@ -28,11 +28,14 @@ class CardView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        loadViewFromNib()
+        loadViewFromNib(frame: frame)
     }
     
-    fileprivate func loadViewFromNib() {
+    fileprivate func loadViewFromNib(frame: CGRect? = nil) {
         let view = createInitialView()
+        if let frame = frame {
+            view.frame = frame
+        }
         let logoImage = createLogoImage(size: bounds.size)
         frontImageView.image = logoImage
         let _ = createRoundedBorders(backImageView, color: UIColor.black)
@@ -63,9 +66,9 @@ class CardView: UIView {
                 
                 if first {
                     first = false
-                    ctx.cgContext.move(to: CGPoint(x: length, y: 50))
+                    ctx.cgContext.move(to: CGPoint(x: length, y: size.width/4))
                 } else {
-                    ctx.cgContext.addLine(to: CGPoint(x: length, y: 50))
+                    ctx.cgContext.addLine(to: CGPoint(x: length, y: size.width/4))
                 }
                 
                 length *= 0.99
