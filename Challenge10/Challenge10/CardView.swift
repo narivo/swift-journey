@@ -22,6 +22,13 @@ class CardView: UIView {
     var view: UIView!
     var data: CardData? = nil
     var delegate: CardViewDelegate? = nil
+    var backImage: String? {
+        didSet {
+            if let backImage = backImage {
+                backImageView.image = UIImage(named: backImage)
+            }
+        }
+    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)

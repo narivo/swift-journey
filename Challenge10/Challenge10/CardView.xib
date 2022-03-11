@@ -23,7 +23,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hkD-qY-aLh">
                     <rect key="frame" x="16" y="20" width="68" height="110"/>
                 </imageView>
-                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="king" translatesAutoresizingMaskIntoConstraints="NO" id="QiT-s2-j3D">
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bullet" translatesAutoresizingMaskIntoConstraints="NO" id="QiT-s2-j3D">
                     <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
                 </imageView>
             </subviews>
@@ -44,7 +44,7 @@
         </view>
     </objects>
     <resources>
-        <image name="king" width="250" height="376.5"/>
+        <image name="bullet" width="86.5" height="200"/>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

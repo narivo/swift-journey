@@ -11,10 +11,12 @@ class CardData: NSObject {
     var id: Int
     var desc: String
     var pairID: Int
+    var foundPair: Bool
     
     init(id: Int, describing desc: String = "No description provided", with pairID: Int) {
         self.id = id
         self.desc = desc
         self.pairID = pairID
+        self.foundPair = false
     }
 }
