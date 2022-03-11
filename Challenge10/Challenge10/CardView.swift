@@ -20,6 +20,8 @@ class CardView: UIView {
     }
     */
     var view: UIView!
+    var data: CardData? = nil
+    var delegate: CardViewDelegate? = nil
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -99,10 +101,25 @@ class CardView: UIView {
     
     func flip() {
         backImageView.isHidden = !backImageView.isHidden
+        if backImageView.isHidden {
+            delegate?.cardView(self, didFlip: .Back)
+        } else {
+            delegate?.cardView(self, didFlip: .Front)
+        }
+        debugPrint("ID: \(String(describing: data?.id)), PairID: \(String(describing: data?.pairID))")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         flip()
     }
 
+}
+
+enum CardOrientation: Int {
+    case Back = 1
+    case Front = 0
+}
+
+protocol CardViewDelegate {
+    func cardView(_ sender: CardView, didFlip orientation: CardOrientation)
 }

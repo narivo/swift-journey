@@ -17,6 +17,7 @@
 		497AF40C27D77D8A000F6359 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497AF40B27D77D8A000F6359 /* CardView.swift */; };
 		497AF41427D78334000F6359 /* Challenge10UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497AF41327D78334000F6359 /* Challenge10UITests.swift */; };
 		497AF41627D78334000F6359 /* Challenge10UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497AF41527D78334000F6359 /* Challenge10UITestsLaunchTests.swift */; };
+		49F4CFD427DB262B003AD0AA /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F4CFD327DB262B003AD0AA /* CardData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		497AF41127D78334000F6359 /* Challenge10UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Challenge10UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		497AF41327D78334000F6359 /* Challenge10UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge10UITests.swift; sourceTree = "<group>"; };
 		497AF41527D78334000F6359 /* Challenge10UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge10UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		49F4CFD327DB262B003AD0AA /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				497AF3FC27D778A0000F6359 /* Assets.xcassets */,
 				497AF3FE27D778A0000F6359 /* LaunchScreen.storyboard */,
 				497AF40127D778A0000F6359 /* Info.plist */,
+				49F4CFD327DB262B003AD0AA /* CardData.swift */,
 			);
 			path = Challenge10;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F4CFD427DB262B003AD0AA /* CardData.swift in Sources */,
 				497AF3F827D7789E000F6359 /* ViewController.swift in Sources */,
 				497AF3F427D7789E000F6359 /* AppDelegate.swift in Sources */,
 				497AF40C27D77D8A000F6359 /* CardView.swift in Sources */,
